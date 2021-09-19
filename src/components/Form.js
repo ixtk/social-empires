@@ -8,7 +8,7 @@ const Form = ({ handleChange, civilization }) => {
   return (
     <form>
       <select value={civilization} onChange={handleChange}>
-        <option value="----">----</option>
+        <option value="">-----</option>
         {civilizationOptions}
       </select>
     </form>

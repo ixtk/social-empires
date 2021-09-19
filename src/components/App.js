@@ -4,27 +4,17 @@ import Header from './Header'
 import { useState } from 'react'
 
 const App = () => {
-  const [civilization, setcivilization] = useState('----')
-
-  const handleChange = e => {
-    setcivilization(e.target.value)
-  }
+  const [civilization, setCivilization] = useState('')
 
   return (
-    <>
-      <div className="container">
-        <Header />
-      </div>
-      <div className="container">
-        <Form
-          handleChange={handleChange}
-          civilization={civilization}
-        />
-        <hr />
-
-        <Gallery civilization={civilization} />
-      </div>
-    </>
+    <div className="container">
+      <Header />
+      <Form
+        handleChange={e => setCivilization(e.target.value)}
+        civilization={civilization}
+      />
+      <Gallery civilization={civilization} />
+    </div>
   )
 }
 

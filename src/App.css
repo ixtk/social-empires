@@ -2,6 +2,10 @@
 
 /* GENERAL */
 
+:root {
+  --primary-dark: hsl(210, 20%, 22%);
+}
+
 * {
   box-sizing: border-box;
 }
@@ -13,8 +17,18 @@ body {
 }
 
 .container {
-  max-width: 90%;
+  max-width: 80rem;
+  padding: 0 1.3rem;
   margin: 0 auto;
+}
+
+figure {
+  margin: 0;
+}
+
+img {
+  display: block;
+  max-width: 100%;
 }
 
 /* HEADER */
@@ -23,24 +37,25 @@ header {
   display: flex;
   flex-direction: column;
   align-items: center;
-  color:rgb(44, 55, 66);
 }
 
-.header-img {
-  max-width: 200px;
+header img {
+  width: 200px;
 }
 
-.header-title {
+h1 {
   font-family: 'Girassol', cursive;
   margin: 0;
   letter-spacing: 1px;
   font-size: 2.5rem;
+  color: var(--primary-dark);
 }
 
 /* INPUT */
 
 form {
-  margin: 1em 0;
+  margin-top: 1rem;
+  margin-bottom: 2rem;
 }
 
 select {
@@ -54,22 +69,12 @@ select {
 .gallery {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(100px, auto));
-  grid-gap: 1em;
-  padding: 2em 0;
+  grid-gap: 1.5rem;
+  padding: 2rem 0;
+  border-top: 1px solid var(--primary-dark);
 }
 
-.gallery div {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+figcaption {
   text-align: center;
-  /* text-transform: lowercase; */
-}
-
-img {
-    max-width: 100%;
-}
-
-.gallery-img-title {
-  color:rgb(44, 55, 66);
+  color: var(--primary-dark);
 }

@@ -2,7 +2,7 @@ import data from '../data'
 import Image from './Image'
 
 const Gallery = ({ civilization }) => {
-  if (civilization === '----') return <div className="gallery"></div>
+  if (civilization === '') return <div className="gallery"></div>
   
   const images = data[civilization].map(title => {
     return (

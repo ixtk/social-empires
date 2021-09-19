@@ -1,9 +1,9 @@
 const Image = props => {
   return (
-    <div>
-      <img className="gallery-img" src={props.src} alt={props.name} />
-      <span className="gallery-img-title">{props.name}</span>
-    </div>
+    <figure>
+      <img src={props.src} alt={props.name}/>
+      <figcaption>{props.name}</figcaption>
+    </figure>
   )
 }
 

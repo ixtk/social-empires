@@ -1,8 +1,10 @@
+import logo from '../socialempires-logo.jpg'
+
 const Header = () => {
   return (
     <header>
-      <img className="header-img" src="./socialempires-logo.jpg" alt="Social Empires logo" />
-      <h1 className="header-title">Civilizations</h1>
+      <img src={logo} alt="Social Empires logo"/>
+      <h1>Civilizations</h1>
     </header>
   )
 }
