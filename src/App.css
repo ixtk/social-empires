@@ -66,6 +66,10 @@ select {
   /* text-transform: lowercase; */
 }
 
+img {
+    max-width: 100%;
+}
+
 .gallery-img-title {
   color:rgb(44, 55, 66);
 }
