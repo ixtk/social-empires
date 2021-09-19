@@ -11,11 +11,11 @@ Made with [React](https://reactjs.org)
 - Atlantis
 - Aztec
 - Celestial
-- China
+- Chinese
 - Egypt
 - Elf
 - Gladiator
-- Haunted
+- Halloween
 - Home
 - Inferno
 - Necro
@@ -24,13 +24,17 @@ Made with [React](https://reactjs.org)
 - Troll
 - Viking
 
-All the images are available in the `/public` folder. (I do not own any of them)
+All the images are available in the `/public/civilizations/` folder. (I do not own any of them)
 
 **Note**: not all image/civilization names might be accurate
 
 ## How it was made
 
 Images were obtained from [This Google sheet document](https://docs.google.com/spreadsheets/d/1UTj8a_ie4BrixZcTBerNbhft4iZB3S0rWo1OKgfjhAo/edit#gid=0) (by Hong Yao)
+
+**Note**: The document has since been updated by the original author. It now contains sheet for every civilization and images/titles are in order. I have made Python script to generate new data from every sheet and updated the image list. Below is described how I grabbed the data when it wasn't as organized.
+
+---
 
 I parsed `src` attributes of images in the document using basic Javascript in browser console and stored them in text file:
 ```
@@ -43,7 +47,7 @@ https://lh4.googleusercontent.com/JrPp0dxA0b5c1CjHH-28juJDBma3kylfr_4JIfGV1ENLio
 ```
 >links.txt
 
-Since there's no API available, I downloaded all of them (> 1000) to not risk losing access (in case Google document gets deleted, which is probably unlikely).
+I downloaded all of them (> 1000) to not risk losing access (in case Google document gets deleted, which is probably unlikely).
 
 I also had to parse image titles (and store them in a text file) from the Google document since downloaded images came with names such as `Capture_2020_09_19_17_41_26_749`.
 
@@ -57,10 +61,10 @@ From there, I renamed downloaded images with the names in `titles.txt` and moved
 
 ---
 
-There's `civilization:imageTitles` mapping json data in `/src/data.js`. 
+There's `civilization:imageTitles` mapping json data in `/src/data.json`. 
 
 ```js
-const data = {
+{
   "atlantis": [
     "Atlantis Archer",
     "Atlantis Archery",
@@ -72,7 +76,7 @@ const data = {
   ]
   // ...
 ```
->/src/data.js
+>/src/data.json
 
 When user selects `civilization`, map function generates images through `data[civilization]`.
 
