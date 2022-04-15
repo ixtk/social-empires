@@ -18,7 +18,7 @@ body {
 
 .container {
   max-width: 80rem;
-  padding: 0 1.3rem;
+  padding: 1.3rem;
   margin: 0 auto;
 }
 
@@ -44,7 +44,7 @@ header img {
 }
 
 h1 {
-  font-family: 'Girassol', cursive;
+  font-family: 'Girassol', sans-serif;
   margin: 0;
   letter-spacing: 1px;
   font-size: 2.5rem;
@@ -58,10 +58,19 @@ form {
   margin-bottom: 2rem;
 }
 
+select, button, option {
+  cursor: pointer;
+  font: inherit;
+}
+
 select {
-  font-size: inherit;
   display: block;
   margin: 0 auto;
+}
+
+button {
+  display: block;
+  margin: 1.5rem auto;
 }
 
 /* GALLERY */
