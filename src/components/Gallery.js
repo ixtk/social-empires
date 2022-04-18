@@ -2,8 +2,6 @@ import data from '../data'
 import Image from './Image'
 
 const Gallery = ({ civilization, currentPage, imagePerPage, handlePageChange }) => {
-  if (civilization === '') return <div className="gallery"></div>
-
   let endRange = currentPage * imagePerPage
   const imageCount = data[civilization].length
 

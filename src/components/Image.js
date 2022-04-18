@@ -1,7 +1,7 @@
 const Image = props => {
   return (
     <figure>
-      <img src={props.src} alt={props.name}/>
+      <img src={props.src} height="200" width="200"/>
       <figcaption>{props.name}</figcaption>
     </figure>
   )

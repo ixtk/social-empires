@@ -29,6 +29,17 @@ figure {
 img {
   display: block;
   max-width: 100%;
+  height: auto;
+  animation: skeleton 1s linear infinite alternate;
+}
+
+@keyframes skeleton {
+  from {
+    background-color: hsl(200, 20%, 80%);
+  }
+  to {
+    background-color: hsl(200, 20%, 95%);
+  } 
 }
 
 /* HEADER */
