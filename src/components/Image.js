@@ -5,7 +5,7 @@ const handleLoad = e => {
 const Image = props => {
   return (
     <figure>
-      <img src={props.src} height="200" width="200" onLoad={handleLoad}/>
+      <img src={props.src} width="200" height="200" onLoad={handleLoad} onError={handleLoad}/>
       <figcaption>{props.name}</figcaption>
     </figure>
   )

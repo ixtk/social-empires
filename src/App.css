@@ -22,14 +22,17 @@ body {
   margin: 0 auto;
 }
 
-figure {
-  margin: 0;
-}
-
 img {
   display: block;
   max-width: 100%;
   height: auto;
+}
+
+figure {
+  margin: 0;
+}
+
+figure img {
   animation: skeleton 1s linear infinite alternate;
 }
 
