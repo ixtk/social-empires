@@ -1,7 +1,12 @@
-import data from '../data'
+const tags = [
+  'atlantis', 'aztec', 'celestial', 'chinese',
+  'egypt', 'elf', 'gladiator', 'halloween', 'home',
+  'infernal', 'myth', 'mythological', 'necro',
+  'orc', 'troll', 'viking'
+]
 
 const Form = ({ handleChange, civilization }) => {
-  const civilizationOptions = Object.keys(data).map(civilization => {
+  const civilizationOptions = tags.map(civilization => {
     return <option value={civilization} key={civilization}>{civilization}</option>
   })
 

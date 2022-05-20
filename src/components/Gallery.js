@@ -1,20 +1,43 @@
-import data from '../data'
 import Image from './Image'
+import { useState, useEffect } from 'react'
+
+const baseUrl = 'https://res.cloudinary.com'
 
 const Gallery = ({ civilization, currentPage, imagePerPage, handlePageChange }) => {
   let endRange = currentPage * imagePerPage
-  const imageCount = data[civilization].length
+  const [imageData, setImageData] = useState([])
+
+  useEffect(() => {
+    const fetchImages = async () => {
+      let data = null;
+      try {
+        const url = `${baseUrl}/dc2c49xov/image/list/${civilization}.json`
+        const response = await fetch(url)
+        if (!response.ok) {
+          throw new Error(`Images not found at ${url}`)
+        }
+        data = await response.json()
+      } catch (err) {
+        console.error(err)
+        return
+      }
+      setImageData(data.resources)
+      }
+    fetchImages()
+  }, [civilization])
+
+  const imageCount = imageData.length
 
   if (endRange > imageCount) {
     endRange = imageCount
   }
-
-  const images = data[civilization].slice(0, endRange).map(title => {
+  
+  const images = imageData.slice(0, endRange).map(image => {
     return (
       <Image
-        src={`./civilizations/${civilization}/${title}.png`}
-        name={title}
-        key={title}
+        src={`${baseUrl}/dc2c49xov/image/upload/${image.public_id}`}
+        name={image.context.custom.caption}
+        key={image.public_id}
       />
     )
   })
