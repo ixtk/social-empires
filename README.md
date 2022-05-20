@@ -1,36 +1,17 @@
 ## Social Empires civilization gallery
 Browse units, decorations, buildings (and more) of different Social Empires civilizations!
 
-Inspired by [This video](https://www.youtube.com/watch?v=k7tR9cOjO0g) By Hong Yao
+Inspired by [video by Hong Yao](https://www.youtube.com/watch?v=k7tR9cOjO0g)
 
 Made with [React](https://reactjs.org)
 
 ![](public/atlantis.png)
 
-### Currently available civilizations
-- Atlantis
-- Aztec
-- Celestial
-- Chinese
-- Egypt
-- Elf
-- Gladiator
-- Halloween
-- Home
-- Inferno
-- Necro
-- Orc
-- Mythological
-- Troll
-- Viking
-
-All the images are available in the `/public/civilizations/` folder. (I do not own any of them)
-
 **Note**: not all image/civilization names might be accurate
 
 ## How it was made
 
-Images were obtained from [This Google sheet document](https://docs.google.com/spreadsheets/d/1UTj8a_ie4BrixZcTBerNbhft4iZB3S0rWo1OKgfjhAo/edit#gid=0) (by Hong Yao)
+Images were obtained from [Google sheet document by Hong Yao](https://docs.google.com/spreadsheets/d/1UTj8a_ie4BrixZcTBerNbhft4iZB3S0rWo1OKgfjhAo/edit#gid=0)
 
 **Note**: The document has since been updated by the original author. It now contains sheet for every civilization and images/titles are in order. I have made Python script to generate new data from every sheet and updated the image list. Below is described how I grabbed the data when it wasn't as organized.
 
@@ -58,27 +39,6 @@ From there, I renamed downloaded images with the names in `titles.txt` and moved
 - civilization name in title
 - visual similarity to civilization theme
 - remembering that it belongs to certain civilization
-
----
-
-There's `civilization:imageTitles` mapping json data in `/src/data.json`. 
-
-```js
-{
-  "atlantis": [
-    "Atlantis Archer",
-    "Atlantis Archery",
-    "Atlantis Decoration",
-    "Atlantis Field",
-    "Atlantis Mill",
-    "Atlantis Quarters",
-    // ...
-  ]
-  // ...
-```
->/src/data.json
-
-When user selects `civilization`, map function generates images through `data[civilization]`.
 
 ## About the game
 - By: [Socialpoint](https://www.socialpoint.es/)
