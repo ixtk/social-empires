@@ -21,7 +21,9 @@ const Gallery = ({ civilization, currentPage, imagePerPage, handlePageChange }) 
         console.error(err)
         return
       }
-      setImageData(data.resources)
+      const imageList = data.resources
+      imageList.reverse()
+      setImageData(imageList)
       }
     fetchImages()
   }, [civilization])
@@ -38,6 +40,7 @@ const Gallery = ({ civilization, currentPage, imagePerPage, handlePageChange }) 
         src={`${baseUrl}/dc2c49xov/image/upload/${image.public_id}`}
         name={image.context.custom.caption}
         key={image.public_id}
+        uniqueId={image.public_id}
       />
     )
   })
