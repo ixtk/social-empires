@@ -15,7 +15,10 @@ const App = () => {
     <header>
       <img src={logo} alt="Social Empires logo"/>
       <Select
-        onClick={e => setCivilization(e.target.dataset.category)}
+        onClick={e => {
+          setCivilization(e.target.dataset.category)
+          setPage(1)
+        }}
         menuOpen={menuOpen}
         setMenuOpen={setMenuOpen}
         selectedCategory={civilization}/>
