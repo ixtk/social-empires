@@ -22,6 +22,12 @@ body {
   margin: 0 auto;
 }
 
+ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
 img {
   display: block;
   max-width: 100%;
@@ -54,50 +60,108 @@ header {
 }
 
 header img {
-  width: 200px;
-}
-
-h1 {
-  font-family: 'Girassol', sans-serif;
-  margin: 0;
-  letter-spacing: 1px;
-  font-size: 2.5rem;
-  color: var(--primary-dark);
-}
-
-/* INPUT */
-
-form {
-  margin-top: 1rem;
-  margin-bottom: 2rem;
-}
-
-select, button, option {
-  cursor: pointer;
-  font: inherit;
-}
-
-select {
-  display: block;
-  margin: 0 auto;
+  width: 250px;
 }
 
 button {
   display: block;
-  margin: 1.5rem auto;
+  cursor: pointer;
+  font: inherit;
+}
+
+header button {
+  font-family: 'Girassol', sans-serif;
+  margin: 0;
+  padding: 0;
+  border: none;
+  letter-spacing: 1px;
+  font-size: 1.7rem;
+  color: var(--primary-dark);
+  background-color: #f1fafd;
+  width: 100%;
+  padding: 3px 0;
+}
+
+button:disabled {
+  background-color: #d6e3e7;
+  cursor: not-allowed;
+}
+
+header ul button, .load-btn {
+  transition: background-color 0.2s;
+}
+
+header ul button:hover, .load-btn:hover {
+  background-color: #d6e3e7;
+}
+
+.select-container {
+  position: relative;
+  max-width: 280px;
+  width: 100%;
+}
+
+.select-container ul::-webkit-scrollbar {
+  width: 5px;
+}
+
+.select-container ul::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+.select-container ul::-webkit-scrollbar-thumb {
+  background-color: #b6b9b9;
+}
+
+.select-container ul {
+  position: absolute;
+  left: 0;
+  right: 0;
+  transform: translateY(10px);
+  max-height: 300px;
+  overflow-y: scroll;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+  background-color: #f1fafd;
+  scrollbar-width: thin;
+  border-radius: 5px;
+}
+
+.category-selected {
+  font-size: 2.5rem;
+  background-color: transparent;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  column-gap: 1rem;
+}
+
+.category-selected img {
+  height: 12px;
+  width: auto;
+  margin-top: 8px;
 }
 
 /* GALLERY */
 
 .gallery {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(100px, auto));
+  grid-template-columns: repeat(auto-fill, minmax(110px, auto));
   grid-gap: 1.5rem;
-  padding: 2rem 0;
-  border-top: 1px solid var(--primary-dark);
+  margin-top: 3rem;
+  margin-bottom: 2rem;
 }
 
 figcaption {
   text-align: center;
   color: var(--primary-dark);
+}
+
+.load-btn {
+  margin: 1.5rem auto;
+  background-color: #f1fafd;
+  border: 1px solid gray;
+  color: var(--primary-dark);
+  padding: 8px 15px;
+  border-radius: 3px;
 }

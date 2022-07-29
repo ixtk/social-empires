@@ -48,7 +48,7 @@ const Gallery = ({ civilization, currentPage, imagePerPage, handlePageChange }) 
   return (
     <>
       <div className="gallery">{images}</div>
-      {endRange === imageCount || <button onClick={handlePageChange}>Load more</button>}
+      {endRange === imageCount || <button className='load-btn' onClick={handlePageChange}>Load more</button>}
     </>
   )
 }
